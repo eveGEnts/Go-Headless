@@ -36,13 +36,8 @@ function Home() {
     return (
         <div>
           <Navbar />
-          <div style={{ paddingTop: '70px', paddingBottom: '40px' }}>
-            {/* Main content goes here */}
-            <main className="container mt-5">
-              <h1>Welcome to My Site</h1>
-              {/* More content */}
-            </main>
-          </div>
+            
+            hello
           <Footer />
         </div>
     );

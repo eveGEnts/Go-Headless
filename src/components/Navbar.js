@@ -3,7 +3,7 @@ import './Navbar.scss';
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-md navbar-light no-padding fixed-top">
+        <nav className="navbar navbar-expand-md navbar-white no-padding fixed-top" style={{ padding:'0px'}}>
 
             <div className="container-fluid">
             {/*
