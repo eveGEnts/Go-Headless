@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+//import About from './components/About';
+//import Contact from './components/Contact';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import './custom.scss';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
