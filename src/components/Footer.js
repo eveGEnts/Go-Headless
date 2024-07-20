@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className="footer fixed-bottom bg-white" style={{padding: '5px', borderTop: '1px solid #DFDFDF'}}>
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
 
                     {/* Company name aligned to the left */}

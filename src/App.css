@@ -1,7 +1,7 @@
 body { 
   padding-top: 40px;
   background-color: gray;
-  /*background-color: gray;*/
+  font-family: sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -11,13 +11,3 @@ body {
   }
 }
 
-/*
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.container {
-  flex: 1;
-}
-*/
