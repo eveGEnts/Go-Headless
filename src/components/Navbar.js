@@ -5,7 +5,7 @@ import './Navbar.scss';
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-md navbar-white no-padding fixed-top" style={{ padding:'0px'}}>
+        <nav className="navbar navbar-expand-md navbar-white no-padding fixed-top" style={{padding:'0px', borderBottom: '1px solid #DFDFDF'}}>
             <div className="container-fluid">
 
                 {/* Site Logo */}

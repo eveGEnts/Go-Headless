@@ -5,7 +5,6 @@
     background-color: #fff;
   }
   
-
 .navbar-border {
     position: relative;
   }
@@ -21,6 +20,6 @@
 }
 
 .nav-link.active {
-    background-color: $primary !important;  /* Change to your desired color */
-    color: white !important;  /* Change text color if needed */
+    background-color: $primary !important;
+    color: white !important;
   }

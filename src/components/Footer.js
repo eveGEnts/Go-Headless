@@ -1,20 +1,33 @@
 import React from 'react';
-import './Footer.css';
+//import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="footer fixed-bottom main-footer">
-            <p className="col-md-4 mb-0 text-muted">&copy; 2021 Company, Inc</p>
+        <footer className="footer fixed-bottom bg-white" style={{padding: '5px', borderTop: '1px solid #DFDFDF'}}>
+            <div className="container">
+                <div className="row">
 
-            <ul className="nav col-md-4 justify-content-end">
-                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Home</a></li>
-                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Features</a></li>
-                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Pricing</a></li>
-                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">FAQs</a></li>
-                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">About</a></li>
-            </ul>
+                    {/* Company name aligned to the left */}
+                    <div className="col-md-4 d-flex align-items-center justify-content-start">
+                        <span className="text-primary fw-bold mb-0">eveGEnts</span>&nbsp;
+                        <span className="text-muted fw-bold mb-0">Version 0.0.1</span>
+                    </div>
+
+                    {/* Navigation options aligned to the right */}
+                    <div className="col-md-8">
+                        <ul className="nav justify-content-end">
+                            <li className="nav-item"><a href="#" className="nav-link text-muted">Home</a></li>
+                            <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Features</a></li>
+                            <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Pricing</a></li>
+                            <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">FAQs</a></li>
+                            <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </footer>
     );
 };
+
 
 export default Footer;
