@@ -3,35 +3,52 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import './links.scss';
 
+const MenuOption = ({ iconClass, label, disabled }) => {
+    return (
+        <div className={`menu-option p-3 ${disabled ? 'disabled' : ''}`} role="button" tabIndex="0" aria-disabled={disabled}>
+            <div><i className={`fa ${iconClass} fa-super`}></i></div>
+            <div className="fw-bold">{label}</div>
+         </div>
+    );
+};
+  
 const Links = () => {
-  return (
-    <div className="container">
-        <div className="row menu-row">
+    return (
+        <div className="outer-container">
+        <div className="container">
 
-            <div className="col-md-4 menu-col">
-                <div className="menu-option p-3" onClick={() => {}}>
-                    <div><i className="fa fa-tasks fa-super"></i></div>
-                    <div className='fw-bold'>Organizer Module</div>
+            <div className="row">
+                <div className="col-12 text-center my-4">
+                    <h2>Welcome to eveGEnts</h2>
                 </div>
             </div>
 
-            <div className="col-md-4 menu-col">
-                <div className="menu-option p-3" onClick={() => {}}>
-                    <div><i className="fa fa-calendar-check fa-super"></i></div>
-                    <div className='fw-bold'>Event Pages</div>
+            <div className="row menu-row">
+                <div className="col-md-4 menu-col">
+                    <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
+                </div>
+                <div className="col-md-4 menu-col">
+                    <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
+                </div>
+                <div className="col-md-4 menu-col">
+                    <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
                 </div>
             </div>
 
-            <div className="col-md-4 menu-col">
-                <div className="menu-option p-3" onClick={() => {}}>
-                    <div><i className="fa fa-shield-halved fa-super"></i></div>
-                    <div className='fw-bold'>System Administration</div>
+            <div className="row menu-row">
+                <div className="col-md-4 menu-col">
+                    <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
+                </div>
+                <div className="col-md-4 menu-col">
+                    <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
+                </div>
+                <div className="col-md-4 menu-col">
+                    <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
                 </div>
             </div>
 
-        </div>
-    </div>
-  );
+        </div></div>
+    );
 };
 
 export default Links;
