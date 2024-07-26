@@ -4,11 +4,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './links.scss';
 import evegents_logo from '../../assets/eveGEnts_logo.svg';
 
-const MenuOption = ({ iconClass, label, disabled }) => {
+const MenuOption = ({ iconClass, label, disabled, description }) => {
     return (
         <div className={`menu-option p-3 ${disabled ? 'disabled' : ''}`} role="button" tabIndex="0" aria-disabled={disabled}>
             <div><i className={`fa ${iconClass} fa-super`}></i></div>
             <div className="fw-bold">{label}</div>
+            <div className="small text-secondary fw-bold">{description}</div>
          </div>
     );
 };
@@ -21,35 +22,28 @@ const Links = () => {
                 <div className="row">
                     <div className="col-12 text-center">
                         <img src={evegents_logo} className="mb-2" alt="eveGEnts Logo" style={{maxWidth: '400px'}} />
-                        <h3 className='fw-bold text-primary'>Welcome to eveGEnts</h3>
+                        <h3 className='fw-bold text-primary mb-2'>Welcome to eveGEnts</h3>
                     </div>
                 </div>
 
                 <div className="row menu-row">
                     <div className="col-md-4 menu-col">
-                        <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
+                        <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} description={"Access: Organizers"} />
                     </div>
                     <div className="col-md-4 menu-col">
-                        <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
+                        <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} description={"Access: Public"} />
                     </div>
                     <div className="col-md-4 menu-col">
-                        <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
+                        <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} description={"Access: Administrators"} />
                     </div>
                 </div>
 
-                { /*
                 <div className="row menu-row">
                     <div className="col-md-4 menu-col">
-                        <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
+                        <MenuOption iconClass="fa-right-to-bracket" label="Login" disabled={false} />
                     </div>
-                    <div className="col-md-4 menu-col">
-                        <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
-                    </div>
-                    <div className="col-md-4 menu-col">
-                        <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
-                    </div>
+                   
                 </div>
-                */ }
 
             </div>
         </div>
