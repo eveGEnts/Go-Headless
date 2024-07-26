@@ -1,14 +1,6 @@
-// Override default variables before the import
-//$body-bg: #000;
-
-// Import Bootstrap functions and variables
-//@import '~bootstrap/scss/_functions.scss';
-//@import '~bootstrap/scss/_variables.scss';
-
-// Override the primary color
-$primary: #286161; // Set your desired color here
+// Theme color
+$primary: #286161;
 $success: #1695a0;
-$body-color: #333333;  // Set to any color you want, e.g., dark gray
-// Import Bootstrap and its default variables
+
+$primaryLight: #2861611F;
 @import '~bootstrap/scss/bootstrap.scss';
-//$primary: #286161; // Set your desired color here
