@@ -4,18 +4,17 @@
  * Center the container vertically within its parent.
  */
 
- .outer-container {
+.outer-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; // Adjust this as needed based on your layout
-    width: 100%; // Ensure the container takes full width
+    height: 100vh;
+    width: 100%;
   }
   
   .container {
-    width: 100%; // Ensure the container takes full width
-    max-width: 1200px; // Set a maximum width to prevent it from becoming too wide
-    padding: 0 15px; // Add padding to avoid content touching the edges
+    width: 100%;
+    padding: 0 15px;
   }
   
 
@@ -60,6 +59,7 @@
 /**
  * Adjusts the margins of the row container for menu items to ensure precise alignment.
  */
+ 
 .menu-row {
     margin-right: -15px;
     margin-left: -15px;

@@ -2,6 +2,7 @@ import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import './links.scss';
+import evegents_logo from '../../assets/eveGEnts_logo.svg';
 
 const MenuOption = ({ iconClass, label, disabled }) => {
     return (
@@ -15,39 +16,43 @@ const MenuOption = ({ iconClass, label, disabled }) => {
 const Links = () => {
     return (
         <div className="outer-container">
-        <div className="container">
+            <div className="container">
 
-            <div className="row">
-                <div className="col-12 text-center my-4">
-                    <h2>Welcome to eveGEnts</h2>
+                <div className="row">
+                    <div className="col-12 text-center">
+                        <img src={evegents_logo} className="mb-2" alt="eveGEnts Logo" style={{maxWidth: '400px'}} />
+                        <h3 className='fw-bold text-primary'>Welcome to eveGEnts</h3>
+                    </div>
                 </div>
+
+                <div className="row menu-row">
+                    <div className="col-md-4 menu-col">
+                        <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
+                    </div>
+                    <div className="col-md-4 menu-col">
+                        <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
+                    </div>
+                    <div className="col-md-4 menu-col">
+                        <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
+                    </div>
+                </div>
+
+                { /*
+                <div className="row menu-row">
+                    <div className="col-md-4 menu-col">
+                        <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
+                    </div>
+                    <div className="col-md-4 menu-col">
+                        <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
+                    </div>
+                    <div className="col-md-4 menu-col">
+                        <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
+                    </div>
+                </div>
+                */ }
+
             </div>
-
-            <div className="row menu-row">
-                <div className="col-md-4 menu-col">
-                    <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
-                </div>
-                <div className="col-md-4 menu-col">
-                    <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
-                </div>
-                <div className="col-md-4 menu-col">
-                    <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
-                </div>
-            </div>
-
-            <div className="row menu-row">
-                <div className="col-md-4 menu-col">
-                    <MenuOption iconClass="fa-tasks" label="Organizer Module" disabled={false} />
-                </div>
-                <div className="col-md-4 menu-col">
-                    <MenuOption iconClass="fa-calendar-check" label="Event Pages" disabled={false} />
-                </div>
-                <div className="col-md-4 menu-col">
-                    <MenuOption iconClass="fa-shield-halved" label="System Administration" disabled={true} />
-                </div>
-            </div>
-
-        </div></div>
+        </div>
     );
 };
 
