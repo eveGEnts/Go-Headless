@@ -4,3 +4,15 @@ $success: #1695a0;
 
 $primaryLight: #2861811f;
 @import '~bootstrap/scss/bootstrap.scss';
+
+body { 
+    padding-top: 0px;
+    font-family: sans-serif;
+}
+  
+@media (max-width: 768px) {
+    body {
+        padding-top: 150px;
+        font-family: sans-serif;
+    }
+}

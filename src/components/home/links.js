@@ -42,7 +42,10 @@ const Links = () => {
                     <div className="col-md-4 menu-col">
                         <MenuOption iconClass="fa-right-to-bracket" label="Login" disabled={false} />
                     </div>
-                   
+
+                    <div className="col-md-4 menu-col">
+                        <MenuOption iconClass="fa-circle-question" label="Help Center" disabled={false} />
+                    </div>
                 </div>
 
             </div>
