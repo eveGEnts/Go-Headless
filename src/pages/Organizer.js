@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Navbar from '../components/Navbar';
+//import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 function Organizer() {
 
     return (
         <div>
-          <Navbar />
-            
+          
           <div className="container-fluid mt-3">
             <div className="d-flex justify-content-between align-items-center">
                 <h1 className="h3">Page Title</h1>
