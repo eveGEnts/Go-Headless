@@ -24,29 +24,17 @@ $secondary-700: rgba($secondary, 0.7);
 $secondary-800: rgba($secondary, 0.8);
 $secondary-900: rgba($secondary, 0.9);
 
+// Import Bootstrap before setting body
+@import '~bootstrap/scss/bootstrap.scss';
+
 :root {
     --font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-  
 
 body { 
     padding-top: 0px;
     font-family: sans-serif;
     background-color: #f4f6f9;
-}
-  
-//@media (max-width: 768px) {
-//    body {
-//        //padding-top: 150px;
-//        font-family: sans-serif;
-//        background-color: #f4f6f9;
-//    }
-//}
-
-body {
     font-family: var(--font-family-sans-serif);
 }
-
-
-@import '~bootstrap/scss/bootstrap.scss';

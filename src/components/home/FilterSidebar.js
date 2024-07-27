@@ -2,8 +2,8 @@ import React from 'react';
 
 function FilterSidebar() {
     return (
-        <div className="col-md-3 p-3 bg-light">
-            <h4>Search & Filter</h4>
+        <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white">
+            <h4 className='fw-bold'>Find Events</h4>
             <form>
                 <div className="mb-3">
                     <label htmlFor="searchEvent" className="form-label">Search Events</label>

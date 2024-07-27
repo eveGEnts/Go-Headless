@@ -7,15 +7,16 @@ import EventList from '../components/home/EventList';
 
 function Home() {
     return (
-        <div className="container-fluid">
+        <div>
             <SuperHeader />
             <Navbar />
 
-            <div className="row">
-                <FilterSidebar />
-                <EventList />
+            <div className="container-fluid">
+                <div className="row pt-3 ps-3 pe-1">
+                    <FilterSidebar />
+                    <EventList />
+                </div>
             </div>
-
             <Footer />
         </div>
     );

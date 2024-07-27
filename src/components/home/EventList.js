@@ -1,4 +1,5 @@
 import React from 'react';
+import EventItem from '../common/EventItem';
 
 function EventList() {
     const events = [
@@ -9,20 +10,16 @@ function EventList() {
     ];
 
     return (
-        <div className="col-md-9">
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="col-xl-10 col-lg-9 col-md-8">
+            <div className="row">
                 {events.map(event => (
-                    <div key={event.id} className="col">
-                        <div className="card h-100">
-                            <img src="path_to_event_image.jpg" className="card-img-top" alt="Event Image" />
-                            <div className="card-body">
-                                <h5 className="card-title">{event.name}</h5>
-                                <p className="card-text">{event.description}</p>
-                            </div>
-                            <div className="card-footer">
-                                <small className="text-muted">{event.date}</small>
-                            </div>
-                        </div>
+                    <div key={event.id} className="col-lg-3 col-md-4 col-sm-6 menu-col">
+                        <EventItem 
+                            imgSrc={event.imgSrc} 
+                            label={event.name} 
+                            disabled={event.disabled || false} 
+                            description={`Access: ${event.accessLevel} - ${event.description}`} 
+                        />
                     </div>
                 ))}
             </div>

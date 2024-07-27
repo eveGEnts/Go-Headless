@@ -4,6 +4,7 @@
  * Center the container vertically within its parent.
  */
 
+ /*
 .outer-container {
     display: flex;
     align-items: center;
@@ -16,12 +17,12 @@
     width: 100%;
     padding: 0 15px;
 }
-
+*/
 /**
  * Defines the appearance and layout of individual menu options within the user interface.
  */
 
-.menu-option {
+.event-item {
     height: 160px;
     //width: 320px;
     background-color: #fff;
@@ -36,7 +37,7 @@
     transition: background-color 0.3s, box-shadow 0.3s;
 
     &:hover {
-        background-color: $primaryLight;
+        background-color: $primary-100;
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
