@@ -1,8 +1,29 @@
-// Theme color
+// Define theme colors
 $primary: #286181;
-$success: #1695a0;
+$secondary: #1695a0;
 
-$primaryLight: #2861811f;
+// Define alpha-modified colors for primary
+$primary-10: rgba($primary, 0.1);
+$primary-20: rgba($primary, 0.2);
+$primary-30: rgba($primary, 0.3);
+$primary-40: rgba($primary, 0.4);
+$primary-50: rgba($primary, 0.5);
+$primary-60: rgba($primary, 0.6);
+$primary-70: rgba($primary, 0.7);
+$primary-80: rgba($primary, 0.8);
+$primary-90: rgba($primary, 0.9);
+
+// Define alpha-modified colors for secondary
+$secondary-10: rgba($secondary, 0.1);
+$secondary-20: rgba($secondary, 0.2);
+$secondary-30: rgba($secondary, 0.3);
+$secondary-40: rgba($secondary, 0.4);
+$secondary-50: rgba($secondary, 0.5);
+$secondary-60: rgba($secondary, 0.6);
+$secondary-70: rgba($secondary, 0.7);
+$secondary-80: rgba($secondary, 0.8);
+$secondary-90: rgba($secondary, 0.9);
+
 @import '~bootstrap/scss/bootstrap.scss';
 
 body { 
@@ -12,7 +33,7 @@ body {
   
 @media (max-width: 768px) {
     body {
-        padding-top: 150px;
+        //padding-top: 150px;
         font-family: sans-serif;
     }
 }

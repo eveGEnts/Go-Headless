@@ -1,13 +1,20 @@
 @import '../../custom.scss';
 
+.navbar {
+    padding: 0;
+    border-bottom: 1px solid #DFDFDF;
+    z-index: 1020;
+    background-color: $primary-10;
+}
+
 .navbar * {
     font-weight: bold !important;
-    background-color: #fff;
+    //background-color: $primaryLight;
 }
   
 .navbar-border {
     position: relative;
-  }
+}
   
 .navbar-border:hover::after {
     content: '';
@@ -22,4 +29,9 @@
 .nav-link.active {
     background-color: $primary !important;
     color: white !important;
-  }
+}
+
+.super-header {
+    height: 60px;
+    z-index: 1030;  
+}

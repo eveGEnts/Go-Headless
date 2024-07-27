@@ -4,7 +4,7 @@ import institution_logo from '../../assets/test_uni_logo.png';
 
 const SuperHeader = () => {
     return (
-        <header className="super-header fixed-top bg-white" style={{ padding: '5px'}}>
+        <header className="bg-white super-header">
             <div className="container-fluid">
                 <div className="d-flex justify-content-between align-items-center">
                     <a href="#">
