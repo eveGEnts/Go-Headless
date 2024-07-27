@@ -1,36 +1,41 @@
 @import '../../custom.scss';
 
+// Main navigation bar
 .navbar {
     padding: 0;
     border-bottom: 1px solid #DFDFDF;
     z-index: 1020;
-    background-color: $primary-10;
+    background-color: $primary-100;
+
+    * {
+        font-weight: bold !important;
+    }
+    
+    // Dynamic border effect
+    &-border {
+        position: relative;
+
+        &:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 0;
+            left: 0;
+            bottom: 0;
+            border-bottom: 3px solid $primary;
+        }
+    }
 }
 
-.navbar * {
-    font-weight: bold !important;
-    //background-color: $primaryLight;
-}
-  
-.navbar-border {
-    position: relative;
-}
-  
-.navbar-border:hover::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0;
-    left: 0;
-    bottom: 0;
-    border-bottom: 3px solid $primary;
+// Active navigation links
+.nav-link {
+    &.active {
+        background-color: $primary !important;
+        color: white !important;
+    }
 }
 
-.nav-link.active {
-    background-color: $primary !important;
-    color: white !important;
-}
-
+// Additional header or top bar
 .super-header {
     height: 60px;
     z-index: 1030;  

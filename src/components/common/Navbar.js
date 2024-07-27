@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../custom.scss';
-import institution_logo from '../../assets/test_uni_logo.png';
 import './Navbar.scss';
+
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import institution_logo from '../../assets/test_uni_logo.png';
 
 // SuperHeader Component
 const SuperHeader = () => {
@@ -25,17 +27,53 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-white no-padding">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">My Site</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item font-weight-bold">
-                            <Link className="nav-link navbar-border active" aria-current="page" to="/home">Home</Link>
-                        </li>
+                    <ul className="navbar-nav me-auto">
+                        {/* Home */}
                         <li className="nav-item">
-                            <a className="nav-link navbar-border" href="#">Features</a>
+                            <Link className="nav-link navbar-border active" to="/">Home</Link>
+                        </li>
+                        
+                        {/* Events */}
+                        <li className="nav-item">
+                            <Link className="nav-link navbar-border" to="/events">Events</Link>
+                        </li>
+                        
+                        {/* Graphics */}
+                        <li className="nav-item">
+                            <Link className="nav-link navbar-border" to="/graphics">Graphics</Link>
+                        </li>
+
+                        {/* Assets */}
+                        <li className="nav-item">
+                            <Link className="nav-link navbar-border" to="/assets">Assets</Link>
+                        </li>
+
+                        {/* Admin */}
+                        <li className="nav-item">
+                            <Link className="nav-link navbar-border" to="/admin">Admin</Link>
+                        </li>
+
+                        {/* TWIG Page */}
+                        <li className="nav-item">
+                            <Link className="nav-link navbar-border" to="/twig">TWIG</Link>
+                        </li>
+                    </ul>
+                    <ul className="navbar-nav ms-auto">
+                        
+                        {/* User Dropdown */}
+                        <li className="nav-item dropdown">
+                            <a className="nav-link navbar-border" href="#" id="navbarDropdownUserLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                User <i className="fa-solid fa-caret-down"></i>
+                            </a>
+                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUserLink">
+                                <li><Link className="dropdown-item" to="/user/profile">Profile</Link></li>
+                                <li><Link className="dropdown-item" to="/user/settings">Settings</Link></li>
+                                <li><Link className="dropdown-item" to="/user/logout">Logout</Link></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
