@@ -7,18 +7,17 @@ import EventList from '../components/home/EventList';
 
 function Home() {
     return (
-        <div>
+        <div id="app">
 
-            <div className='fixed-top'>
             <SuperHeader />
             <Navbar />
-            </div>
             
-            <div className="container-fluid">
-                <div className="row">
-                    <FilterSidebar />
-                    
-                    <EventList />
+            <div className="content">
+                <div className="container-fluid">
+                    <div className="row">
+                        <FilterSidebar />
+                        <EventList />
+                    </div>
                 </div>
             </div>
 

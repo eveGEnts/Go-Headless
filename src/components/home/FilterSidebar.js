@@ -1,6 +1,13 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 
 function FilterSidebar() {
+
+    const [count, setCount] = useState(0);
+
+    //useEffect(() => {
+    //    alert(`${count}`);
+    //})
+
     return (
         <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white" style={{ height: '100%' }}>
             <h4 className='fw-bold'>Find Events</h4>
@@ -18,7 +25,7 @@ function FilterSidebar() {
                         <option value="3">Concert</option>
                     </select>
                 </div>
-                <button type="submit" className="btn btn-primary">Apply Filters</button>
+                <button type="button" className="btn btn-outline-primary" onClick={() => setCount(count + 1)}>Apply Filters {count}</button>
             </form>
         </div>
     );

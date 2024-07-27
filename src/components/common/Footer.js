@@ -1,16 +1,15 @@
 import React from 'react';
-//import './Footer.css';
+import './Footer.scss';
 
 const Footer = () => {
     return (
-        <footer className="footer fixed-bottom bg-white" style={{padding: '5px', borderTop: '1px solid #DFDFDF'}}>
+        <footer className="footer bg-white">
             <div className="container-fluid">
                 <div className="row">
-
                     {/* Company name aligned to the left */}
                     <div className="col-md-4 d-flex align-items-center justify-content-start">
-                        <span className="text-primary fw-bold mb-0">eveGEnts</span>&nbsp;
-                        <span className="text-muted fw-bold mb-0">Version 0.0.1</span>
+                        <span className="text-primary fw-bold mb-0">Powered by eveGEnts</span>&nbsp;
+                        <span className="text-muted mb-0">Version 0.0.1</span>
                     </div>
 
                     {/* Navigation options aligned to the right */}
@@ -28,6 +27,5 @@ const Footer = () => {
         </footer>
     );
 };
-
 
 export default Footer;
