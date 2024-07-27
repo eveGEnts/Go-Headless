@@ -24,6 +24,9 @@ const SuperHeader = () => {
 
 // Navbar Component
 const Navbar = () => {
+
+    const notificationCount = 5;
+
     return (
         <nav className="navbar navbar-expand-md navbar-white no-padding">
             <div className="container-fluid">
@@ -32,37 +35,46 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav me-auto">
+
                         {/* Home */}
                         <li className="nav-item">
                             <Link className="nav-link navbar-border active" to="/">Home</Link>
                         </li>
                         
-                        {/* Events */}
+                        {/* My Organizations */}
                         <li className="nav-item">
-                            <Link className="nav-link navbar-border" to="/events">Events</Link>
+                            <Link className="nav-link navbar-border" to="/myOrganization">My Organizations</Link>
                         </li>
                         
-                        {/* Graphics */}
+                        {/* My Events */}
                         <li className="nav-item">
-                            <Link className="nav-link navbar-border" to="/graphics">Graphics</Link>
+                            <Link className="nav-link navbar-border" to="/myEvents">My Events</Link>
                         </li>
 
-                        {/* Assets */}
+                        {/* System Administration */}
                         <li className="nav-item">
-                            <Link className="nav-link navbar-border" to="/assets">Assets</Link>
-                        </li>
-
-                        {/* Admin */}
-                        <li className="nav-item">
-                            <Link className="nav-link navbar-border" to="/admin">Admin</Link>
-                        </li>
-
-                        {/* TWIG Page */}
-                        <li className="nav-item">
-                            <Link className="nav-link navbar-border" to="/twig">TWIG</Link>
+                            <Link className="nav-link navbar-border" to="/admin">System Administration</Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav ms-auto">
+
+                        {/* Login */}
+                        <li className="nav-item">
+                            <Link className="nav-link navbar-border" to="/user/login">Login</Link>
+                        </li>
+
+                        {/* Notifications */}
+                        <li className="nav-item">
+                            <Link className="nav-link navbar-border position-relative" to="/notifications">
+                                <i className="fa fa-bell"></i>
+                                {notificationCount > 0 && (
+                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                                        {notificationCount}
+                                        <span className="visually-hidden">unread messages</span>
+                                    </span>
+                                )}
+                            </Link>
+                        </li>
                         
                         {/* User Dropdown */}
                         <li className="nav-item dropdown">
