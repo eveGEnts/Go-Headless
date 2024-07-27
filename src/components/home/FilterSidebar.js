@@ -2,7 +2,7 @@ import React from 'react';
 
 function FilterSidebar() {
     return (
-        <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white">
+        <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white" style={{ height: '100%' }}>
             <h4 className='fw-bold'>Find Events</h4>
             <form>
                 <div className="mb-3">

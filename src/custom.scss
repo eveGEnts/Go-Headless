@@ -3,7 +3,7 @@ $primary: #286181;
 $secondary: #1695a0;
 
 // Define alpha-modified colors for primary
-$primary-100: rgba($primary, 0.1);
+$primary-100: lighten($primary, 60%);
 $primary-200: rgba($primary, 0.2);
 $primary-300: rgba($primary, 0.3);
 $primary-400: rgba($primary, 0.4);
@@ -33,7 +33,7 @@ $secondary-900: rgba($secondary, 0.9);
 }
 
 body { 
-    padding-top: 0px;
+    padding-top: 100px;
     font-family: sans-serif;
     background-color: #f4f6f9;
     font-family: var(--font-family-sans-serif);

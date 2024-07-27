@@ -28,7 +28,7 @@ const Navbar = () => {
     const notificationCount = 5;
 
     return (
-        <nav className="navbar navbar-expand-md navbar-white no-padding">
+        <nav className="navbar navbar-expand-md no-padding pt-0 pb-0">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

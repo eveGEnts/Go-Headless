@@ -8,15 +8,20 @@ import EventList from '../components/home/EventList';
 function Home() {
     return (
         <div>
+
+            <div className='fixed-top'>
             <SuperHeader />
             <Navbar />
-
+            </div>
+            
             <div className="container-fluid">
-                <div className="row pt-3 ps-3 pe-1">
+                <div className="row">
                     <FilterSidebar />
+                    
                     <EventList />
                 </div>
             </div>
+
             <Footer />
         </div>
     );
