@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer bg-white" style={{padding: '5px', borderTop: '1px solid #DFDFDF'}}>
+        <footer className="footer fixed-bottom bg-white" style={{padding: '5px', borderTop: '1px solid #DFDFDF'}}>
             <div className="container-fluid">
                 <div className="row">
 

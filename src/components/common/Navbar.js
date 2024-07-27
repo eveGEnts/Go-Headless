@@ -43,7 +43,7 @@ const Navbar = () => {
                         
                         {/* My Organizations */}
                         <li className="nav-item">
-                            <Link className="nav-link navbar-border" to="/myOrganization">My Organizations</Link>
+                            <Link className="nav-link navbar-border" to="/myOrganizations">My Organizations</Link>
                         </li>
                         
                         {/* My Events */}
@@ -59,10 +59,12 @@ const Navbar = () => {
                     <ul className="navbar-nav ms-auto">
 
                         {/* Login */}
+                        {/* 
                         <li className="nav-item">
                             <Link className="nav-link navbar-border" to="/user/login">Login</Link>
                         </li>
-
+                        */}
+                        
                         {/* Notifications */}
                         <li className="nav-item">
                             <Link className="nav-link navbar-border position-relative" to="/notifications">

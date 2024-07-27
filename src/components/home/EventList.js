@@ -17,11 +17,11 @@ function EventList() {
         { id: 12, name: 'Event Name 12', description: 'Short description of event 12.', date: 'Event Date' },
         { id: 13, name: 'Event Name 13', description: 'Short description of event 13.', date: 'Event Date' },
         { id: 14, name: 'Event Name 14', description: 'Short description of event 14.', date: 'Event Date' },
-        { id: 15, name: 'Event Name 15', description: 'Short description of event 15.', date: 'Event Date' },
-        { id: 16, name: 'Event Name 16', description: 'Short description of event 16.', date: 'Event Date' },
-        { id: 17, name: 'Event Name 17', description: 'Short description of event 17.', date: 'Event Date' },
-        { id: 18, name: 'Event Name 18', description: 'Short description of event 18.', date: 'Event Date' },
-        { id: 19, name: 'Event Name 19', description: 'Short description of event 19.', date: 'Event Date' },
+        //{ id: 15, name: 'Event Name 15', description: 'Short description of event 15.', date: 'Event Date' },
+        //{ id: 16, name: 'Event Name 16', description: 'Short description of event 16.', date: 'Event Date' },
+        //{ id: 17, name: 'Event Name 17', description: 'Short description of event 17.', date: 'Event Date' },
+        //{ id: 18, name: 'Event Name 18', description: 'Short description of event 18.', date: 'Event Date' },
+        //{ id: 19, name: 'Event Name 19', description: 'Short description of event 19.', date: 'Event Date' },
     ];
 
     return (
