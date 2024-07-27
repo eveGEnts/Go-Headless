@@ -1,38 +1,17 @@
 @import '../../custom.scss';
 
-/**
- * Center the container vertically within its parent.
- */
-
- /*
-.outer-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-}
-  
-.container {
-    width: 100%;
-    padding: 0 15px;
-}
-*/
-/**
- * Defines the appearance and layout of individual menu options within the user interface.
- */
-
 .event-item {
-    height: 160px;
+    //height: 320px;
     //width: 320px;
     background-color: #fff;
     border: 1px solid #dee2e6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 4px;
+    //display: flex;
+    //flex-direction: column;
+    margin: 0;
+    //align-items: center;
+    //justify-content: center;
+    //text-align: center;
+    //margin-bottom: 4px;
     font-size: 18px;
     transition: background-color 0.3s, box-shadow 0.3s;
 
@@ -70,14 +49,14 @@
  */
 
 .menu-col {
-    padding: 8px;
+    padding: 10px;
 }
 
 /**
  * Styles super-sized Font Awesome icons within the menu options.
  */
 
-.fa-super {
-    font-size: 64px;
-    margin-bottom: 8px;
-}
+//.fa-super {
+//    font-size: 64px;
+//    margin-bottom: 8px;
+//}
