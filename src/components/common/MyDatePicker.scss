@@ -1,0 +1,38 @@
+@import '../../custom.scss';
+
+/* CustomDatePicker.scss */
+
+// Define your primary theme color
+//$primary: #FF0000; // Replace this with your actual primary color
+
+// Ensure the date picker doesn't exceed the container width
+.react-datepicker {
+  font-size: 1rem;
+  max-width: 100%;
+  
+  .react-datepicker__header {
+    background-color: $primary; // Use the primary color
+    color: white;
+    border-bottom: 1px solid darken($primary, 10%); // Slightly darker shade for contrast
+  }
+
+  .react-datepicker__day--selected {
+    background-color: $primary; // Use the primary color
+    color: white;
+  }
+
+  .react-datepicker__day--selected:hover {
+    background-color: lighten($primary, 10%); // Lighten on hover
+  }
+
+  .react-datepicker__triangle {
+    display: none; // Optionally hide the triangle
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .react-datepicker {
+    width: 100%; // Make the date picker full-width on smaller screens
+  }
+}
