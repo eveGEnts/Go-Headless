@@ -8,6 +8,13 @@ const MyDatePicker = () => {
 
     return (
         <div>
+            <div className="form-check">
+  <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+  <label className="form-check-label" for="flexCheckDefault">
+    Default checkbox
+  </label>
+</div>
+
             <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}

@@ -41,7 +41,7 @@ const FilterSidebar = () => {
 
                 {/* Search Events */}
                 <div className="mb-3">
-                    <label htmlFor="eventSearch" className="form-label">Search</label>
+                    <label htmlFor="eventSearch" className="form-label fw-bold">Search</label>
                     <input
                         type="text"
                         className="form-control"
@@ -54,7 +54,7 @@ const FilterSidebar = () => {
 
                 {/* Filter By Organization */}
                 <div className="mb-3">
-                    <label htmlFor="eventOrganization" className="form-label">Organization</label>
+                    <label htmlFor="eventOrganization" className="form-label fw-bold">Organization</label>
                     <Select 
                         options={organizationOptions} 
                         onChange={handleOrganizationChange} 
@@ -68,7 +68,7 @@ const FilterSidebar = () => {
 
                 {/* Start Date */}
                 <div className="mb-3">
-                    <label htmlFor="eventStartDate" className="form-label">Start Date</label>
+                    <label htmlFor="eventStartDate" className="form-label fw-bold">Start Date</label>
                     <MyDatePicker />
                 </div>
             </div>
