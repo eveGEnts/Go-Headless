@@ -69,8 +69,23 @@ const FilterSidebar = () => {
                 {/* Start Date */}
                 <div className="mb-3">
                     <label htmlFor="eventStartDate" className="form-label fw-bold">Start Date</label>
-                    <MyDatePicker />
+                    <MyDatePicker
+                        checkboxId="checkbox1"
+                        datePickerId="datePicker1"
+                        label="Any Date"
+                    />                
                 </div>
+
+                {/* End Date */}
+                <div className="mb-3">
+                    <label htmlFor="eventStartDate" className="form-label fw-bold">End Date</label>
+                    <MyDatePicker
+                        checkboxId="checkbox2"
+                        datePickerId="datePicker2"
+                        label="Any Date"
+                    />                
+                </div>
+
             </div>
             <div className="mt-3">
                 <h4 className='fw-bold'>Current Input Values:</h4>
