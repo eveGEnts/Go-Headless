@@ -1,8 +1,12 @@
 import chroma from 'chroma-js';
 
-const getComputedStyleValue = (property) => {
-    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
-};
+//const getComputedStyleValue = (property) => {
+//    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
+//};
+
+const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--bs-primary').trim(); //getComputedStyleValue('--bs-primary');
+const defaultBorderColor = '#bfbfbf';
+
 
 const dot = (color = 'transparent') => ({
     alignItems: 'center',
@@ -17,22 +21,17 @@ const dot = (color = 'transparent') => ({
     },
 });
 
-const primaryColor = getComputedStyleValue('--bs-primary');
 
-const colorStyles = {
-    control: (provided) => ({
-        ...provided,
-        borderColor: '#bfbfbf', // Default border color
-        boxShadow: `0 0 0 .25rem rgba(${primaryColor}, 0.25)`, // Focus shadow effect
-        borderRadius: '.25rem', // Rounded corners
-        '&:hover': {
-          borderColor: primaryColor, // Change border color on hover
-        },
-        '&:focus': {
-          borderColor: primaryColor, // Change border color on focus
-          boxShadow: `0 0 0 .25rem rgba(${primaryColor}, 0.25)`, // Focus shadow effect
-        },
-    }),
+const colorStylesSingle = {
+  control: (provided, { isFocused }) => ({
+    ...provided,
+    borderColor: isFocused ? primaryColor : defaultBorderColor,
+    boxShadow: isFocused ? `0 0 0 0.2rem rgba(${primaryColor.slice(1)}, 0.25)` : 'none',
+    borderRadius: '.25rem',
+    '&:hover': {
+      borderColor: primaryColor,
+    },
+  }),
 
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     
@@ -73,4 +72,4 @@ const colorStyles = {
   singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
 };
 
-export default colorStyles;
+export default colorStylesSingle;

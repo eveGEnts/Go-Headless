@@ -2,8 +2,8 @@ import { React, useState, useEffect } from 'react';
 import Select from 'react-select';
 
 //import { primary } from '../../custom.scss'; // This is hypothetical
-import colorStyles from '../common/ColorStyles';
-
+import colorStylesSingle from '../common/ColorStylesSingle';
+import colorStylesMultiple from '../common/ColorStylesMultiple';
 
 //const getComputedStyleValue = (property) => {
 //    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
@@ -19,7 +19,7 @@ function FilterSidebar() {
 
     const handleChange = (option) => {
         setOrganization(option);
-        alert(option);
+        //alert(option);
     };
 
     //useEffect(() => {
@@ -33,12 +33,12 @@ function FilterSidebar() {
         { value: '3', label: 'Org 3', color: '#0000FF' }
     ];
 
-    const departmentOptions = [
-        //{ value: '-1', label: 'All Departments', color: '#BFBFBF' },
-        { value: '1', label: 'Org 1', color: '#FF0000' },
-        { value: '2', label: 'Org 2', color: '#00FF00' },
-        { value: '3', label: 'Org 3', color: '#0000FF' }
-    ];
+    //const departmentOptions = [
+    //    //{ value: '-1', label: 'All Departments', color: '#BFBFBF' },
+    //    { value: '1', label: 'Org 1', color: '#FF0000' },
+    //    { value: '2', label: 'Org 2', color: '#00FF00' },
+    //    { value: '3', label: 'Org 3', color: '#0000FF' }
+    //];
 
     return (
         <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white" style={{ height: '100%' }}>
@@ -50,7 +50,7 @@ function FilterSidebar() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="eventOrganization" className="form-label">Organization</label>
-                    <Select options={organizationOptions} onChange={handleChange} id="eventOrganization" styles={colorStyles} defaultValue={organizationOptions[0]} isMulti />
+                    <Select options={organizationOptions} onChange={handleChange} id="eventOrganization" styles={colorStylesMultiple} defaultValue={organizationOptions[0]} isMulti />
                 </div>
                 {/*
                 <button type="button" className="btn btn-outline-primary" onClick={() => setCount(count + 1)}>Apply Filters {selectedOrganization.label}</button>
