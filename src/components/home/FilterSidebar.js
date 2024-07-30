@@ -50,7 +50,15 @@ function FilterSidebar() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="eventOrganization" className="form-label">Organization</label>
-                    <Select options={organizationOptions} onChange={handleChange} id="eventOrganization" styles={colorStylesMultiple} defaultValue={organizationOptions[0]} isMulti />
+                    <Select 
+                        options={organizationOptions} 
+                        onChange={handleChange} 
+                        id="eventOrganization" 
+                        styles={colorStylesMultiple} 
+                        //defaultValue={organizationOptions[0]} 
+                        placeholder="Leave blank to select all"
+                        isMulti 
+                    />
                 </div>
                 {/*
                 <button type="button" className="btn btn-outline-primary" onClick={() => setCount(count + 1)}>Apply Filters {selectedOrganization.label}</button>
