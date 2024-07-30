@@ -15,7 +15,7 @@ function EventList() {
     return (
         <div className="col-xl-10 col-lg-9 col-md-8 p-3">
 
-            <h4 className='fw-bold'>Upcoming Events</h4>
+            <h4 className='fw-bold'>Explore Events</h4>
             <div className="row">
                 {events.map(event => (
                     <div key={event.id} className="col-xl-3 col-lg-4 col-sm-6 menu-col">

@@ -13,16 +13,16 @@ function FilterSidebar() {
             <h4 className='fw-bold'>Find Events</h4>
             <form>
                 <div className="mb-3">
-                    <label htmlFor="searchEvent" className="form-label">Search Events</label>
-                    <input type="text" className="form-control" id="searchEvent" placeholder="Enter event name" />
+                    <label htmlFor="searchEvent" className="form-label">Search</label>
+                    <input type="text" className="form-control" id="searchEvent" placeholder="Event name" />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="filterType" className="form-label">Event Type</label>
-                    <select className="form-select" id="filterType">
-                        <option selected>Choose...</option>
-                        <option value="1">Conference</option>
-                        <option value="2">Seminar</option>
-                        <option value="3">Concert</option>
+                    <label htmlFor="filterType" className="form-label">Department</label>
+                    <select className="form-select" id="filterType" multiple>
+                        <option value="-1" selected>All</option>
+                        <option value="1">Dep 1</option>
+                        <option value="2">Dep 2</option>
+                        <option value="3">Dep 3</option>
                     </select>
                 </div>
                 <button type="button" className="btn btn-outline-primary" onClick={() => setCount(count + 1)}>Apply Filters {count}</button>

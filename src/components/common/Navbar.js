@@ -4,7 +4,7 @@ import '../../custom.scss';
 import './Navbar.scss';
 
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import institution_logo from '../../assets/test_uni_logo.png';
+import institution_logo from '../../assets/eveGEnts_logo.svg';
 
 // SuperHeader Component
 const SuperHeader = () => {
