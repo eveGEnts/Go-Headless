@@ -1,26 +1,41 @@
-import chroma from 'chroma-js'; // Make sure chroma-js is installed
+import chroma from 'chroma-js';
+
+const getComputedStyleValue = (property) => {
+    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
+};
 
 const dot = (color = 'transparent') => ({
-  alignItems: 'center',
-  display: 'flex',
-  ':before': {
-    backgroundColor: color,
-    borderRadius: 10,
-    content: '" "',
-    display: 'block',
-    marginRight: 8,
-    height: 10,
-    width: 10,
-  },
+    alignItems: 'center',
+    display: 'flex', ':before': {
+        backgroundColor: color,
+        borderRadius: 10,
+        content: '" "',
+        display: 'block',
+        marginRight: 8,
+        height: 10,
+        width: 10,
+    },
 });
 
+const primaryColor = getComputedStyleValue('--bs-primary');
+
 const colorStyles = {
-  control: (styles) => ({
-    ...styles,
-    backgroundColor: 'white',
-  }),
-  
+    control: (provided) => ({
+        ...provided,
+        borderColor: '#bfbfbf', // Default border color
+        boxShadow: `0 0 0 .25rem rgba(${primaryColor}, 0.25)`, // Focus shadow effect
+        borderRadius: '.25rem', // Rounded corners
+        '&:hover': {
+          borderColor: primaryColor, // Change border color on hover
+        },
+        '&:focus': {
+          borderColor: primaryColor, // Change border color on focus
+          boxShadow: `0 0 0 .25rem rgba(${primaryColor}, 0.25)`, // Focus shadow effect
+        },
+    }),
+
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    
     const color = chroma(data.color);
     return {
       ...styles,
@@ -50,7 +65,7 @@ const colorStyles = {
       },
     };
   },
-  
+
   input: (styles) => ({ ...styles, ...dot() }),
 
   placeholder: (styles) => ({ ...styles, ...dot('#ccc') }),

@@ -5,9 +5,9 @@ import Select from 'react-select';
 import colorStyles from '../common/ColorStyles';
 
 
-const getComputedStyleValue = (property) => {
-    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
-  };
+//const getComputedStyleValue = (property) => {
+//    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
+//  };
 
 
 
@@ -27,39 +27,18 @@ function FilterSidebar() {
     //})
 
     const organizationOptions = [
-        { value: 'org1', label: 'Org 1', color: '#FF5733' },
-        { value: 'org2', label: 'Org 2', color: '#33FF57' },
-        { value: 'org3', label: 'Org 3', color: '#3357FF' }
-      ];      
+        //{ value: '-1', label: 'All Organizations', color: '#BFBFBF' },
+        { value: '1', label: 'Org 1', color: '#FF0000' },
+        { value: '2', label: 'Org 2', color: '#00FF00' },
+        { value: '3', label: 'Org 3', color: '#0000FF' }
+    ];
 
-    //console.log(primary);
-    const primaryColor = getComputedStyleValue('--bs-primary');
-    console.log(primaryColor);
-
-    
-    const customStyles = {
-        control: (provided) => ({
-          ...provided,
-          borderColor: primaryColor,
-          boxShadow: `0 0 0 1px ${primaryColor}`,
-          '&:hover': {
-            borderColor: primaryColor,
-          },
-        }),
-        menu: (provided) => ({
-          ...provided,
-          borderColor: primaryColor,
-        }),
-        singleValue: (provided) => ({
-          ...provided,
-          color: primaryColor,
-        }),
-        placeholder: (provided) => ({
-          ...provided,
-          color: primaryColor,
-        }),
-    };
-    
+    const departmentOptions = [
+        //{ value: '-1', label: 'All Departments', color: '#BFBFBF' },
+        { value: '1', label: 'Org 1', color: '#FF0000' },
+        { value: '2', label: 'Org 2', color: '#00FF00' },
+        { value: '3', label: 'Org 3', color: '#0000FF' }
+    ];
 
     return (
         <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white" style={{ height: '100%' }}>
@@ -71,7 +50,7 @@ function FilterSidebar() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="eventOrganization" className="form-label">Organization</label>
-                    <Select options={organizationOptions} onChange={handleChange} id="eventOrganization" styles={colorStyles} />
+                    <Select options={organizationOptions} onChange={handleChange} id="eventOrganization" styles={colorStyles} defaultValue={organizationOptions[0]} isMulti />
                 </div>
                 {/*
                 <button type="button" className="btn btn-outline-primary" onClick={() => setCount(count + 1)}>Apply Filters {selectedOrganization.label}</button>
