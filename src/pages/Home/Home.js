@@ -1,9 +1,9 @@
 import React from 'react';
-import { SuperHeader, Navbar } from '../components/common/Navbar';
-import Footer from '../components/common/Footer';
+import { SuperHeader, Navbar } from '../../components/common/Navbar';
+import Footer from '../../components/common/Footer';
 
-import FilterSidebar from '../components/home/FilterSidebar';
-import EventList from '../components/home/EventList';
+import FilterSidebar from '../../components/home/FilterSidebar';
+import EventList from '../../components/home/EventList';
 
 function Home() {
     return (
