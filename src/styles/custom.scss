@@ -1,3 +1,5 @@
+/*
+
 // Define theme colors
 $primary: #286181;
 $secondary: #1695a0;
@@ -57,3 +59,9 @@ html, body {
 //:export {
 //    primary: $primary;
 //}
+
+*/
+
+@import '_variables.scss';
+@import '_imports.scss';
+@import '_layouts.scss';
