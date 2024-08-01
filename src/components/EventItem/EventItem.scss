@@ -26,6 +26,18 @@
             background-color: #e9ecef;
             box-shadow: none;
         }
+
+        img {
+            filter: grayscale(100%); // Applies grayscale filter to the images
+        }
+
+        #eventNameLabel {
+            color: #6c757d!important;
+        }
+
+        .favorite-icon {
+            color: #6c757d!important;
+        }
     }
 
     .banner-container {
