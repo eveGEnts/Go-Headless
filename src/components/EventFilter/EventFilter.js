@@ -1,17 +1,13 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState } from 'react';
 import Select from 'react-select';
 
-//import { primary } from '../../custom.scss'; // This is hypothetical
-//import colorStylesSingle from '../common/ColorStylesSingle';
 import colorStylesMultiple from '../ColorStyle/ColorStylesMultiple';
-
-//const getComputedStyleValue = (property) => {
-//    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
-//  };
-
 import MyDatePicker from '../MyDatePicker/MyDatePicker';
 
+import organizationOptions from '../../services/organizationData';
+
 const EventFilter = () => {
+
     // State variables to keep track of input values
     const [searchValue, setSearchValue] = useState('');
     const [organizationValue, setOrganizationValue] = useState([]);
@@ -27,12 +23,12 @@ const EventFilter = () => {
     };
 
     // Sample options for the Select component
-    const organizationOptions = [
-        //{ value: '-1', label: 'All Organizations', color: '#BFBFBF' },
-        { value: '1', label: 'Org 1', color: '#FF0000' },
-        { value: '2', label: 'Org 2', color: '#00FF00' },
-        { value: '3', label: 'Org 3', color: '#0000FF' }
-    ];
+    //const organizationOptions = [
+    //    //{ value: '-1', label: 'All Organizations', color: '#BFBFBF' },
+    //    { value: '1', label: 'Org 1', color: '#FF0000' },
+    //    { value: '2', label: 'Org 2', color: '#00FF00' },
+    //    { value: '3', label: 'Org 3', color: '#0000FF' }
+    //];
 
     return (
         <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white" style={{ height: '100%' }}>
@@ -70,8 +66,8 @@ const EventFilter = () => {
                 <div className="mb-3">
                     <label htmlFor="eventStartDate" className="form-label fw-bold">Start Date</label>
                     <MyDatePicker
-                        checkboxId="checkbox1"
-                        datePickerId="datePicker1"
+                        checkboxId="eventStartDateCheckbox"
+                        datePickerId="eventStartDatePicker"
                         label="Any Date"
                     />                
                 </div>
@@ -80,8 +76,8 @@ const EventFilter = () => {
                 <div className="mb-3">
                     <label htmlFor="eventStartDate" className="form-label fw-bold">End Date</label>
                     <MyDatePicker
-                        checkboxId="checkbox2"
-                        datePickerId="datePicker2"
+                        checkboxId="eventEndDateCheckbox"
+                        datePickerId="eventEndDatePicker"
                         label="Any Date"
                     />                
                 </div>

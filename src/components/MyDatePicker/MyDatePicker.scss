@@ -1,40 +1,28 @@
 @import '../../styles/style';
 
-// Ensure the date picker doesn't exceed the container width
 .react-datepicker {
-    //font-size: 1rem;
-    //max-width: 100%;
   
     .react-datepicker__header {
-        background-color: $primary-100; // Use the primary color
+        background-color: $primary-100;
         color: $primary;
-        //border-bottom: 1px solid $primary-400; // Slightly darker shade for contrast
 
         .react-datepicker__current-month {
             color: $primary;
         };
 
         .react-datepicker__year-select, .react-datepicker__month-select {
-            color: white; // Ensure text is readable
+            color: white;
         }
     }
 
     .react-datepicker__day--selected {
-        background-color: $primary; // Use the primary color
+        background-color: $primary;
         color: white;
     }
 
-    .react-datepicker__day--selected:hover {
-        background-color: $primary-400; // Lighten on hover
-    }
-
-  //.react-datepicker__triangle {
-    //display: none; // Optionally hide the triangle
-  //}
-
     // Dropdown styles
     .react-datepicker__month-select, .react-datepicker__year-select {
-        background-color: $primary; // Use the primary color for dropdowns
+        background-color: $primary;
         color: white;
         border: 0;
         border-radius: 4px;
@@ -42,37 +30,14 @@
         font-weight: bold;
     }
 
-  //.react-datepicker__month-select {
-  //  margin-right: 0.5rem;
-  //}
-
-  //.react-datepicker__year-select {
-   // margin-left: 0.5rem;
-  //}
-
-  // Dropdown option styles
-  .react-datepicker__month-option,
-  .react-datepicker__year-option {
-    padding: 0.5rem;
-    color: $primary; // Use the primary color for option text
-  }
-
-  .react-datepicker__month-option:hover,
-  .react-datepicker__year-option:hover {
-    background-color: $primary-400; // Lighten on hover
-    color: darken($primary, 10%);
-  }
-
-  // Responsive styles
-  @media (max-width: 768px) {
-    .react-datepicker {
-      width: 100%; // Make the date picker full-width on smaller screens
+    // Dropdown option styles
+    .react-datepicker__month-option, .react-datepicker__year-option {
+        padding: 0.5rem;
+        color: $primary;
     }
-  }
-}
 
-.react-datepicker-wrapper {
-  display: inline;
-  padding: 0;
-  border: 0;
+    .react-datepicker__month-option:hover, .react-datepicker__year-option:hover {
+        background-color: $primary-400;
+        color: $primary;
+    }
 }
