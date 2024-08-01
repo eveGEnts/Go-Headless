@@ -45,7 +45,8 @@ function EventList() {
                             location={event.location} 
                             time={event.time} 
                             enabled={event.enabled} 
-                            organizer={event.organizer} 
+                            organizer={event.organizer}
+                            ticketed={event.ticketed}
                         />
                     </div>
                 ))}
