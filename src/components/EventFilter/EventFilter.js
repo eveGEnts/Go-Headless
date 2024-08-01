@@ -1,4 +1,6 @@
 import { React, useState } from 'react';
+import { format } from 'date-fns';
+
 import Select from 'react-select';
 
 import colorStylesMultiple from '../ColorStyle/ColorStylesMultiple';
@@ -12,6 +14,9 @@ const EventFilter = () => {
     const [searchValue, setSearchValue] = useState('');
     const [organizationValue, setOrganizationValue] = useState([]);
 
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
+
     // Handle change for text input
     const handleSearchChange = (event) => {
         setSearchValue(event.target.value);
@@ -21,14 +26,6 @@ const EventFilter = () => {
     const handleOrganizationChange = (selectedOptions) => {
         setOrganizationValue(selectedOptions);
     };
-
-    // Sample options for the Select component
-    //const organizationOptions = [
-    //    //{ value: '-1', label: 'All Organizations', color: '#BFBFBF' },
-    //    { value: '1', label: 'Org 1', color: '#FF0000' },
-    //    { value: '2', label: 'Org 2', color: '#00FF00' },
-    //    { value: '3', label: 'Org 3', color: '#0000FF' }
-    //];
 
     return (
         <div className="col-xl-2 col-lg-3 col-md-4 p-3 bg-white" style={{ height: '100%' }}>
@@ -69,17 +66,21 @@ const EventFilter = () => {
                         checkboxId="eventStartDateCheckbox"
                         datePickerId="eventStartDatePicker"
                         label="Any Date"
-                    />                
+                        selectedDate={startDate}                   // Passing selected date as prop
+                        onDateChange={(date) => setStartDate(date)} // Handling date change
+                    />
                 </div>
 
                 {/* End Date */}
                 <div className="mb-3">
-                    <label htmlFor="eventStartDate" className="form-label fw-bold">End Date</label>
+                    <label htmlFor="eventEndDate" className="form-label fw-bold">End Date</label>
                     <MyDatePicker
                         checkboxId="eventEndDateCheckbox"
                         datePickerId="eventEndDatePicker"
                         label="Any Date"
-                    />                
+                        selectedDate={endDate}                    // Passing selected date as prop
+                        onDateChange={(date) => setEndDate(date)} // Handling date change
+                    />
                 </div>
 
             </div>
@@ -87,6 +88,7 @@ const EventFilter = () => {
                 <h4 className='fw-bold'>Current Input Values:</h4>
                 <p><strong>Search Value:</strong> {searchValue}</p>
                 <p><strong>Selected Organizations:</strong> {organizationValue.map(option => option.label).join(', ')}</p>
+                <p><strong>Start Date:</strong> {format(startDate, 'yyyy-MM-dd')}</p>
             </div>
         </div>
     );
