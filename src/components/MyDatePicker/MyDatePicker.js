@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
-
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './MyDatePicker.scss';
 
 const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
+
+    let currentDate = new Date();
     const [startDate, setStartDate] = useState(null); // Start with null as the default date
-    const [isChecked, setIsChecked] = useState(false); // Checkbox is initially unchecked
+    const [isChecked, setIsChecked] = useState(true); // Checkbox is initially unchecked
 
     // Handle checkbox changes
     const handleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
-        // Set date to null if checkbox is unchecked, otherwise retain the current date or set a default
-        if (!event.target.checked) {
-            setStartDate(null); // Set date to null when checkbox is unchecked
-            onDateChange(null); // Pass null to the parent component
-        } else {
-            // Set to current date or last valid date, depending on your logic
-            const newDate = startDate || new Date(); // Could be a new Date() or a preserved date
-            setStartDate(newDate);
-            onDateChange(newDate); // Update the parent component
-        }
+        //if (event.target.checked) {
+        //    setStartDate(null); // Set date to null when checkbox is checked
+        //    onDateChange(null); // Pass null to the parent component
+        //}
+
+        //else {
+        //    setStartDate(currentDate);
+        //    onDateChange(currentDate);
+        //}
+
+        setStartDate(event.target.checked ? null : currentDate);
+        onDateChange(event.target.checked ? null : currentDate);
     };
 
     // Handle date changes
@@ -31,7 +34,7 @@ const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
 
     return (
         <div className="input-group">
-            <div className="input-group-text">
+            <div className="checkbox-container">
                 <input
                     className="form-check-input"
                     type="checkbox"
@@ -39,6 +42,7 @@ const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
                     checked={isChecked}
                     onChange={handleCheckboxChange}
                 />
+                <label htmlFor={checkboxId} className='mb-1'>&nbsp;Any Date</label>
             </div>
 
             <DatePicker
@@ -50,8 +54,8 @@ const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
                 showMonthDropdown
                 showYearDropdown
                 dropdownMode="select"
-                disabled={!isChecked}
-                placeholderText='Check to enable'
+                disabled={isChecked}
+                placeholderText={isChecked ? 'Date picker disabled' : 'Select a date'}
             />
         </div>
     );

@@ -51,7 +51,7 @@ function EventList() {
                     </div>
                 ))}
             </div>
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex justify-content-between align-items-center bg-white p-1">
                 <div className='d-flex align-items-center '>
                     <select className="form-select form-select-sm" value={eventsPerPage} onChange={handlePerPageChange} style={{maxWidth: '75px'}}>
                         <option value="10">10</option>

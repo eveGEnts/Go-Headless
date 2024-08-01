@@ -20,6 +20,8 @@ function EventItem({ banner, name, location, time, enabled, organizer, ticketed 
 
     return (
         <div className={`event-item ${enabled ? '' : 'disabled'}`} role="button" tabIndex="0" aria-disabled={!enabled}>
+
+            {/* Event Banner */}
             <div className="banner-container">
                 <img src={banner} alt={name} style={{ width: '100%', height: 'auto' }} />
                 <i className={`text-danger fa${isFavorite ? 's' : 'r'} fa-heart favorite-icon ${isFavorite ? 'favorite' : ''}`}
@@ -28,6 +30,8 @@ function EventItem({ banner, name, location, time, enabled, organizer, ticketed 
                    role="button">
                 </i>
             </div>
+
+            {/* Event Information */}
             <div className='p-3'>
                 <h5 className="fw-bold text-secondary">{name}</h5>
                 <div className="small mb-1">
