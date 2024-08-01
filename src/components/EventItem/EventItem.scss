@@ -1,17 +1,9 @@
 @import '../../styles/style.scss';
 
 .event-item {
-    //height: 320px;
-    //width: 320px;
     background-color: #fff;
     border: 1px solid #dee2e6;
-    //display: flex;
-    //flex-direction: column;
     margin: 0;
-    //align-items: center;
-    //justify-content: center;
-    //text-align: center;
-    //margin-bottom: 4px;
     font-size: 18px;
     transition: background-color 0.3s, box-shadow 0.3s;
 
@@ -33,30 +25,30 @@
             box-shadow: none;
         }
     }
+
+    .banner-container {
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .favorite-icon {
+            position: absolute;
+            top: 10px; // Adjust based on your design
+            left: 10px; // Adjust based on your design
+            cursor: pointer;
+            font-size: 24px; // Adjust the size as needed
+            color: var(--bs-danger); // Use Bootstrap danger color
+        }
+    }
 }
 
-/**
- * Adjusts the margins of the row container for menu items to ensure precise alignment.
- */
- 
 .menu-row {
     margin-right: -15px;
     margin-left: -15px;
 }
 
-/**
- * Defines the spacing around individual menu columns within a row.
- */
-
 .menu-col {
     padding: 10px;
 }
-
-/**
- * Styles super-sized Font Awesome icons within the menu options.
- */
-
-//.fa-super {
-//    font-size: 64px;
-//    margin-bottom: 8px;
-//}
