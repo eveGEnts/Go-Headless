@@ -2,7 +2,7 @@ import React from 'react';
 
 import FavoriteIcon from '../FavoriteIcon/FavoriteIcon';
 
-
+import '../FavoriteIcon/FavoriteIcon_HomePage.scss';
 import './EventItem.scss';
 
 function EventItem({ banner, name, location, time, enabled, organizer, ticketed }) {
@@ -18,13 +18,16 @@ function EventItem({ banner, name, location, time, enabled, organizer, ticketed 
         }
     };
 
+    let initiallyFavorite = false;
+    if(!enabled)    initiallyFavorite = null;
+
     return (
         <div className={`event-item ${enabled ? '' : 'disabled'}`} role="button" tabIndex="0" aria-disabled={!enabled}>
 
             {/* Event Banner */}
             <div className="banner-container">
                 <img src={banner} alt={name} style={{ width: '100%', height: 'auto' }} />
-                <FavoriteIcon /> {/* Use the FavoriteIcon component */}
+                <FavoriteIcon initiallyFavorite={initiallyFavorite} /> {/* Use the FavoriteIcon component */}
             </div>
 
             {/* Event Information */}

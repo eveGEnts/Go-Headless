@@ -1,0 +1,14 @@
+.favorite-icon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: white;  // White background
+    border-radius: 50%;       // Makes the background round
+    width: 32px;              // Specifies the width of the circle
+    height: 32px;             // Specifies the height of the circle
+    display: flex;            // Enables flexbox for center alignment
+    justify-content: center;  // Horizontally centers the icon
+    align-items: center;      // Vertically centers the icon
+}
