@@ -51,7 +51,7 @@ const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
                 showYearDropdown
                 dropdownMode="select"
                 disabled={!isChecked}
-                placeholderText='Enable checkbox to enable filter'
+                placeholderText='Check to enable'
             />
         </div>
     );

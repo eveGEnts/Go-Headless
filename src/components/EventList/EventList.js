@@ -3,29 +3,39 @@ import EventItem from '../EventItem/EventItem';
 import eventData from '../../services/eventData';
 
 function EventList() {
-
     const [currentPage, setCurrentPage] = useState(1);
     const [eventsPerPage, setEventsPerPage] = useState(10);
 
-    // Calculate the number of pages needed
     const pageCount = Math.ceil(eventData.length / eventsPerPage);
-    // Determine the indices for slicing the event data for current display
     const lastEventIndex = currentPage * eventsPerPage;
     const firstEventIndex = lastEventIndex - eventsPerPage;
-    // Slice the event data array to get only the events for the current page
     const currentEvents = eventData.slice(firstEventIndex, lastEventIndex);
 
-    // Handler to change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-    // Handler to change the number of events per page
     const handlePerPageChange = (e) => {
         setEventsPerPage(Number(e.target.value));
-        setCurrentPage(1); // Reset to first page when changing number of items per page
+        setCurrentPage(1); // Reset to first page to avoid out-of-range page number
+    };
+
+    // Function to calculate page numbers to show
+    const getPageNumbers = () => {
+        const pageNumbers = [];
+        let start = Math.max(currentPage - 2, 1);
+        let end = Math.min(start + 4, pageCount);
+
+        if (end === pageCount) { // Adjust the start if end is at the last page
+            start = Math.max(end - 4, 1);
+        }
+
+        for (let i = start; i <= end; i++) {
+            pageNumbers.push(i);
+        }
+        return pageNumbers;
     };
 
     return (
         <div className="col-xl-10 col-lg-9 col-md-8 p-3">
-            <h4 className='fw-bold'>Explore Events</h4>
+            <h4 className='fw-bold'>Explore Events ({eventData.length} records)</h4>
             <div className="row">
                 {currentEvents.map(event => (
                     <div key={event.id} className="col-xl-3 col-lg-4 col-sm-6 menu-col">
@@ -40,37 +50,38 @@ function EventList() {
                     </div>
                 ))}
             </div>
-            {/* Pagination and Items Per Page Controls */}
-            <div className="d-flex justify-content-between align-items-center my-4">
-                {/* Items Per Page Selector */}
-                <div>
-                    <select className="form-select" value={eventsPerPage} onChange={handlePerPageChange}>
+            <div className="d-flex justify-content-between align-items-center my-2">
+                <div className='d-flex align-items-center '>
+                    <select className="form-select form-select-sm" value={eventsPerPage} onChange={handlePerPageChange} style={{maxWidth: '75px'}}>
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="50">50</option>
                     </select>
-                    <span className="ms-2">Items per page | Total: {eventData.length}</span>
+                    <span className="ms-2" style={{width: '150px'}}>events per page</span>
                 </div>
-                {/* Pagination Navigation */}
                 <div>
                     <nav>
                         <ul className="pagination mb-0">
                             <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                                <a className="page-link" href="#!" onClick={() => paginate(currentPage - 1)}>Previous</a>
+                                <a className="page-link" href="#!" onClick={() => paginate(currentPage - 1)}>
+                                    <i class="fa-solid fa-caret-left"></i>
+                                </a>
                             </li>
-                            {Array.from({ length: pageCount }, (_, index) => (
-                                <li key={index + 1} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
-                                    <a className="page-link" href="#!" onClick={() => paginate(index + 1)}>
-                                        {index + 1}
+                            {getPageNumbers().map(number => (
+                                <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
+                                    <a className="page-link" href="#!" onClick={() => paginate(number)}>
+                                        {number}
                                     </a>
                                 </li>
                             ))}
                             <li className={`page-item ${currentPage === pageCount ? 'disabled' : ''}`}>
-                                <a className="page-link" href="#!" onClick={() => paginate(currentPage + 1)}>Next</a>
+                                <a className="page-link" href="#!" onClick={() => paginate(currentPage + 1)}>
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </a>
                             </li>
                         </ul>
                     </nav>
-                    <span className="ms-2">Page {currentPage} of {pageCount}</span>
+                    
                 </div>
             </div>
         </div>
