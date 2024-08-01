@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../custom.scss';
+import '../../styles/_variables.scss';
 import './Navbar.scss';
 
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import institution_logo from '../../assets/eveGEnts_logo.svg';
+import institution_logo from '../../assets/images/eveGEnts_logo.svg';
 
 // SuperHeader Component
 const SuperHeader = () => {

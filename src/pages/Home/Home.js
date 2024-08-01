@@ -1,9 +1,9 @@
 import React from 'react';
-import { SuperHeader, Navbar } from '../../components/common/Navbar';
-import Footer from '../../components/common/Footer';
+import { SuperHeader, Navbar } from '../../components/NavBar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
-import FilterSidebar from '../../components/home/FilterSidebar';
-import EventList from '../../components/home/EventList';
+import EventFilter from '../../components/EventFilter/EventFilter';
+import EventList from '../../components/EventList/EventList';
 
 function Home() {
     return (
@@ -15,7 +15,7 @@ function Home() {
             <div className="content">
                 <div className="container-fluid">
                     <div className="row">
-                        <FilterSidebar />
+                        <EventFilter />
                         <EventList />
                     </div>
                 </div>

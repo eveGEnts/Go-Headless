@@ -1,6 +1,6 @@
 import React from 'react';
-import EventItem from '../common/EventItem';
-import TestBanner from '../../assets/test.png';
+import EventItem from '../EventItem/EventItem';
+import TestBanner from '../../assets/images/test.png';
 
 function EventList() {
     const events = [

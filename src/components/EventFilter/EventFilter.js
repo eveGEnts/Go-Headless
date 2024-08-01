@@ -2,16 +2,16 @@ import { React, useState, useEffect } from 'react';
 import Select from 'react-select';
 
 //import { primary } from '../../custom.scss'; // This is hypothetical
-import colorStylesSingle from '../common/ColorStylesSingle';
-import colorStylesMultiple from '../common/ColorStylesMultiple';
+//import colorStylesSingle from '../common/ColorStylesSingle';
+import colorStylesMultiple from '../ColorStyle/ColorStylesMultiple';
 
 //const getComputedStyleValue = (property) => {
 //    return getComputedStyle(document.documentElement).getPropertyValue(property).trim();
 //  };
 
-import MyDatePicker from '../common/MyDatePicker';
+import MyDatePicker from '../MyDatePicker/MyDatePicker';
 
-const FilterSidebar = () => {
+const EventFilter = () => {
     // State variables to keep track of input values
     const [searchValue, setSearchValue] = useState('');
     const [organizationValue, setOrganizationValue] = useState([]);
@@ -96,4 +96,4 @@ const FilterSidebar = () => {
     );
 };
 
-export default FilterSidebar;
+export default EventFilter;
