@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EventItem from '../EventItem/EventItem';
-import TestBanner from '../../assets/images/test.png';
+import eventData from '../../services/eventData';
 
 function EventList() {
-    const events = [
-        { id: 1, banner: TestBanner, name: 'Test event 1',location: 'Test location', time: '2024-07-11', enabled: true, organizer: 'organizer'},
-        { id: 2, banner: TestBanner, name: 'Test event 2',location: 'Test location', time: '2024-07-11', enabled: true, organizer: 'organizer'},
-        { id: 3, banner: TestBanner, name: 'Test event 3',location: 'Test location', time: '2024-07-11', enabled: true, organizer: 'organizer'},
-        { id: 4, banner: TestBanner, name: 'Test event 4',location: 'Test location', time: '2024-07-11', enabled: false, organizer: 'organizer'},
-        { id: 5, banner: TestBanner, name: 'Test event 5',location: 'Test location', time: '2024-07-11', enabled: true, organizer: 'organizer'},
-        { id: 6, banner: TestBanner, name: 'Test event 6',location: 'Test location', time: '2024-07-11', enabled: true, organizer: 'organizer'},
-    ];
+    const [currentPage, setCurrentPage] = useState(1);
+    const [eventsPerPage] = useState(5);
+
+    const pageCount = Math.ceil(eventData.length / eventsPerPage);
+    const lastEventIndex = currentPage * eventsPerPage;
+    const firstEventIndex = lastEventIndex - eventsPerPage;
+    const currentEvents = eventData.slice(firstEventIndex, lastEventIndex);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div className="col-xl-10 col-lg-9 col-md-8 p-3">
-
             <h4 className='fw-bold'>Explore Events</h4>
             <div className="row">
-                {events.map(event => (
+                {currentEvents.map(event => (
                     <div key={event.id} className="col-xl-3 col-lg-4 col-sm-6 menu-col">
                         <EventItem 
                             banner={event.banner} 
@@ -30,6 +30,23 @@ function EventList() {
                     </div>
                 ))}
             </div>
+            <nav>
+                <ul className="pagination">
+                    <li className="page-item" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+                        <a className="page-link" href="#!">Previous</a>
+                    </li>
+                    {Array.from({ length: pageCount }, (_, index) => (
+                        <li key={index + 1} className={`page-item ${currentPage === index + 1 ? "active" : ""}`}>
+                            <a className="page-link" href="#!" onClick={() => paginate(index + 1)}>
+                                {index + 1}
+                            </a>
+                        </li>
+                    ))}
+                    <li className="page-item" onClick={() => paginate(currentPage + 1)} disabled={currentPage === pageCount}>
+                        <a className="page-link" href="#!">Next</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     );
 }
