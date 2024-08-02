@@ -1,27 +1,47 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import './MyDatePicker.scss';
+
+/**
+ * MyDatePicker is a React component that integrates a date picker with an optional checkbox
+ * for selecting "Any Date", which disables the date picker. It provides an interactive UI
+ * for users to either specify a date or indicate that the date is not fixed.
+ *
+ * Props:
+ *  - `checkboxId` (string): The ID for the checkbox input element.
+ *  - `datePickerId` (string): The ID for the date picker input element.
+ *  - `onDateChange` (function): Callback function that is called when the date is changed.
+ *    This function takes the new date value as its parameter, which can be `null` if
+ *    the date is unset (i.e., "Any Date" is checked).
+ *
+ * Usage:
+ * <MyDatePicker
+ *   checkboxId="any-date-checkbox"
+ *   datePickerId="event-date-picker"
+ *   onDateChange={(date) => { console.log("Selected date:", date); }}
+ * />
+ *
+ * Behavior:
+ *  - The date picker is initially disabled until the "Any Date" checkbox is unchecked.
+ *  - Checking the "Any Date" checkbox sets the date to null and disables the date picker.
+ *  - Unchecking the checkbox enables the date picker and allows the user to select a date.
+ *  - Changes to the date picker or the checkbox state trigger the `onDateChange` callback
+ *    with the new date value or null.
+ */
 
 const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
 
     let currentDate = new Date();
-    const [startDate, setStartDate] = useState(null); // Start with null as the default date
-    const [isChecked, setIsChecked] = useState(true); // Checkbox is initially unchecked
+    const [startDate, setStartDate] = useState(null);
+    const [isChecked, setIsChecked] = useState(true);
 
     // Handle checkbox changes
     const handleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
-        //if (event.target.checked) {
-        //    setStartDate(null); // Set date to null when checkbox is checked
-        //    onDateChange(null); // Pass null to the parent component
-        //}
 
-        //else {
-        //    setStartDate(currentDate);
-        //    onDateChange(currentDate);
-        //}
-
+        // Set date to null if the date picker is disabled.
         setStartDate(event.target.checked ? null : currentDate);
         onDateChange(event.target.checked ? null : currentDate);
     };
@@ -34,6 +54,8 @@ const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
 
     return (
         <div className="input-group">
+
+            {/* "Any Date" checkbox: disable the date picker if checked */}
             <div className="checkbox-container">
                 <input
                     className="form-check-input"
@@ -45,6 +67,7 @@ const MyDatePicker = ({ checkboxId, datePickerId, onDateChange }) => {
                 <label htmlFor={checkboxId} className='mb-1'>&nbsp;Any Date</label>
             </div>
 
+            {/* React date picker component */}
             <DatePicker
                 selected={startDate}
                 onChange={handleDateChange}

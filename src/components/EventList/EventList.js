@@ -47,6 +47,7 @@ function EventList() {
                             enabled={event.enabled} 
                             organizer={event.organizer}
                             ticketed={event.ticketed}
+                            shortDescription={event.shortDescription}
                         />
                     </div>
                 ))}
