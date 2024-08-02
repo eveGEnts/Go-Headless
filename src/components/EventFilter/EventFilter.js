@@ -8,6 +8,11 @@ import MyDatePicker from '../MyDatePicker/MyDatePicker';
 
 import organizationOptions from '../../services/organizationData';
 
+//const ticketOptions = [
+//    { value: '1', label: 'Science Society', color: '#4CAF50' },
+//];
+
+
 const EventFilter = () => {
 
     const [searchValue, setSearchValue] = useState('');
@@ -93,6 +98,27 @@ const EventFilter = () => {
                         onChange={(event) => setLocationValue(event.target.value)}
                     />
                 </div>
+
+                {/* Filter By Tickets */}
+                <div className="mb-3">
+                    <label htmlFor="eventTickets" className="form-label fw-bold">Tickets</label>
+                    
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="eventNoTickets" />
+                        <label className="form-check-label" for="eventNoTickets">No Tickets</label>
+                    </div>
+
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="eventFreeRegistration" />
+                        <label className="form-check-label" for="eventFreeRegistration">Free Registration</label>
+                    </div>
+
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="eventPaidTickets" />
+                        <label className="form-check-label" for="eventPaidTickets">Paid Tickets</label>
+                    </div>
+                </div>
+
             </div>
             <div className="mt-3">
                 <h4 className='fw-bold'>Current Input Values:</h4>
