@@ -3,27 +3,43 @@ import React, { useState } from 'react';
 /**
  * Renders a favorite icon that can be toggled on and off.
  * The icon is visible and can be interacted with if `initiallyFavorite` is not null.
- * 
- * @param {boolean|null} initiallyFavorite - Initial state of the favorite icon. If null, the icon will not be displayed.
- * @returns {JSX.Element|null} A clickable icon if `initiallyFavorite` is not null, otherwise null.
+ *
+ * @param {boolean} initiallyFavorite - Initial state of the favorite icon.
+ * @param {number} favoriteNumber - Display number next to the favorite icon.
+ * @param {boolean} enabled - Determines if the icon can be interacted with.
+ * @returns {JSX.Element} A clickable icon.
  */
 
-function FavoriteIcon({ initiallyFavorite = false }) {
+function FavoriteIcon({ initiallyFavorite = false, favoriteNumber = 0, enabled = true }) {
     const [isFavorite, setIsFavorite] = useState(initiallyFavorite);
 
-    const toggleFavorite = () => setIsFavorite(!isFavorite);
+    const toggleFavorite = () => {
+        if (enabled) {
+            setIsFavorite(!isFavorite);
+        }
+    };
 
-    // Do not display the icon if initiallyFavorite is null
-    if (initiallyFavorite === null) {
-        return null;
+    // The button style depends on both enabled and isFavorite.
+    let buttonStyle = 'btn-danger';
+    if (enabled) {
+        buttonStyle = isFavorite ? 'btn-danger' : 'btn-outline-danger';
+    } else {
+        buttonStyle = isFavorite ? 'btn-dark' : 'btn-outline-dark';
     }
 
     return (
-        <i className={`text-danger fa${isFavorite ? 's' : 'r'} fa-heart favorite-icon ${isFavorite ? 'favorite' : ''}`}
-           onClick={toggleFavorite}
-           aria-label={isFavorite ? 'Unmark as favorite' : 'Mark as favorite'}
-           role="button" 
-        />
+        <div className='d-flex align-items-center fw-bold'>
+            <button 
+                className={`btn ${buttonStyle}`}
+                onClick={toggleFavorite}
+                aria-label={isFavorite ? 'Unmark as favorite' : 'Mark as favorite'}
+                disabled={!enabled}
+            >
+                <i className={`fa${isFavorite ? 's' : 'r'} fa-heart`} />
+                &nbsp; {favoriteNumber}
+            </button>
+            
+        </div>
     );
 }
 
